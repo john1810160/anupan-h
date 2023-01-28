@@ -214,7 +214,7 @@ def _mirror_leech(bot, message, isZip=False, extract=False, isQbit=False, isLeec
         nextmsg = type('nextmsg', (object, ), {'chat_id': message.chat_id, 'message_id': message.reply_to_message.message_id + 1})
         nextmsg = sendMessage(message.text.replace(str(multi), str(multi - 1), 1), bot, nextmsg)
         nextmsg.from_user.id = message.from_user.id
-        sleep(45)
+        sleep(30)
         Thread(target=_mirror_leech, args=(bot, nextmsg, isZip, extract, isQbit, isLeech)).start()
 
 
